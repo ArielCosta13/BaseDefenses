@@ -5,10 +5,9 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.gdx.game.entity.components.AnimationComponent;
-import com.gdx.game.entity.components.StateComponent;
-import com.gdx.game.entity.components.TextureComponent;
-
+import com.basedefense.game.entity.components.TextureComponent;
+import com.basedefense.game.entity.components.AnimationComponent;
+import com.basedefense.game.entity.components.StateComponent;
 
 public class AnimationSystem extends IteratingSystem {
 

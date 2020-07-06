@@ -12,9 +12,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
-import com.gdx.game.entity.components.TextureComponent;
-import com.gdx.game.entity.components.TransformComponent;
-import com.gdx.game.entity.systems.tools.ZComparator;
+import com.basedefense.game.entity.components.TransformComponent;
+import com.basedefense.game.entity.components.TextureComponent;
+import com.basedefense.game.entity.systems.tools.ZComparator;
 
 import java.util.Comparator;
 

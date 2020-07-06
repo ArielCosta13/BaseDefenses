@@ -3,12 +3,12 @@ package com.basedefense.game.entity.systems;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import com.gdx.game.entity.components.BulletComponent;
-import com.gdx.game.entity.components.Mapper;
-import com.gdx.game.entity.components.TransformComponent;
+import com.basedefense.game.entity.components.BulletComponent;
+import com.basedefense.game.entity.components.Mapper;
+import com.basedefense.game.entity.components.TransformComponent;
 
-import static com.gdx.game.Utility.calculateVectorialX;
-import static com.gdx.game.Utility.calculateVectorialY;
+import static com.basedefense.game.utility.Utility.calculateVectorialX;
+import static com.basedefense.game.utility.Utility.calculateVectorialY;
 
 public class BulletSystem extends IteratingSystem{
 

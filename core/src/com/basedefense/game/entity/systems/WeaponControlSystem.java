@@ -4,9 +4,14 @@ import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import com.gdx.game.controller.KeyboardController;
-import com.gdx.game.entity.components.*;
-import com.gdx.game.entity.factories.EntityFactory;
+
+import com.basedefense.game.controller.KeyboardController;
+
+import com.basedefense.game.entity.components.MovementStatsComponent;
+import com.basedefense.game.entity.components.TransformComponent;
+import com.basedefense.game.entity.components.WeaponComponent;
+import com.basedefense.game.entity.factories.EntityFactory;
+
 
 
 public class WeaponControlSystem extends IteratingSystem  {

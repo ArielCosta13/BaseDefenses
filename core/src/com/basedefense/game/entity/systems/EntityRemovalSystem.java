@@ -3,8 +3,8 @@ package com.basedefense.game.entity.systems;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import com.gdx.game.entity.components.BulletComponent;
-import com.gdx.game.entity.factories.EntityFactory;
+import com.basedefense.game.entity.components.BulletComponent;
+import com.basedefense.game.entity.factories.EntityFactory;
 
 public class EntityRemovalSystem extends IteratingSystem {
     EntityFactory efactory;

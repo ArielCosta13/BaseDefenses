@@ -5,7 +5,9 @@ import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import com.gdx.game.entity.components.*;
+import com.basedefense.game.entity.components.EmplacementComponent;
+import com.basedefense.game.entity.components.Mapper;
+import com.basedefense.game.entity.components.TransformComponent;
 
 public class EmplacementLocationUpdateSystem extends IteratingSystem {
 

@@ -7,9 +7,21 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import com.gdx.game.entity.components.*;
+import com.basedefense.game.entity.components.TextureComponent;
+import com.basedefense.game.entity.components.TransformComponent;
+import com.basedefense.game.entity.components.MovementStatsComponent;
+import com.basedefense.game.entity.components.WeaponComponent;
 
-import static com.gdx.game.loaders.Assets.*;
+import com.basedefense.game.entity.components.PlayerPartComponent;
+import com.basedefense.game.entity.components.HardPointComponent;
+import com.basedefense.game.entity.components.EmplacementComponent;
+import com.basedefense.game.entity.components.StateComponent;
+import com.basedefense.game.entity.components.AttachmentPointComponent;
+import com.basedefense.game.entity.components.ConnectorPoint;
+
+import com.basedefense.game.entity.components.WeaponPartComponent;
+
+import static com.basedefense.game.loaders.Assets.*;
 
 public class EntityConfigurationFactory {
   private AssetManager manager;
