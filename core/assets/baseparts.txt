@@ -1,0 +1,19 @@
+baseparts.png
+size: 158, 92
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+basepart_1x1_bottom
+  rotate: false
+  xy: 0, 0
+  size: 92, 92
+  orig: 92, 92
+  offset: 0, 0
+  index: -1
+basepart_1x1_top
+  rotate: false
+  xy: 92, 0
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1

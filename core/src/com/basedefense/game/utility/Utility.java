@@ -11,17 +11,17 @@ public class Utility {
 
     public static void queueAddImages(AssetManager manager){
         System.out.println("Loading atlas");
-        manager.load(SHIP_ATLAS, TextureAtlas.class);
+      //  manager.load(SHIP_ATLAS, TextureAtlas.class);
         manager.load(WEAPON_ATLAS, TextureAtlas.class);
-        manager.load(BULLETS_ATLAS, TextureAtlas.class);
-        manager.load(SHIP_BODY_BIG_ATLAS, TextureAtlas.class);
-        manager.load(CANNON_TURRET_MEDIUM_ATLAS, TextureAtlas.class);
-        manager.load(MISSILE_TURRET_SMALL_ATLAS, TextureAtlas.class);
-        manager.load(SHIP_PARTS_MEDIUM, TextureAtlas.class);
-        manager.load(EMPLACEMENT_MEDIUM, TextureAtlas.class);
-        manager.load(CANNON_MEDIUM, TextureAtlas.class);
-        manager.load(CANNON_MEDIUM_ANIMATED, TextureAtlas.class);
-        manager.load(CANNON_MEDIUM_PARTS, TextureAtlas.class);
+      //  manager.load(BULLETS_ATLAS, TextureAtlas.class);
+      //  manager.load(SHIP_BODY_BIG_ATLAS, TextureAtlas.class);
+      //  manager.load(CANNON_TURRET_MEDIUM_ATLAS, TextureAtlas.class);
+      //  manager.load(MISSILE_TURRET_SMALL_ATLAS, TextureAtlas.class);
+      //  manager.load(SHIP_PARTS_MEDIUM, TextureAtlas.class);
+      //  manager.load(EMPLACEMENT_MEDIUM, TextureAtlas.class);
+      //  manager.load(CANNON_MEDIUM, TextureAtlas.class);
+      //  manager.load(CANNON_MEDIUM_ANIMATED, TextureAtlas.class);
+      //  manager.load(CANNON_MEDIUM_PARTS, TextureAtlas.class);
         System.out.println("Finish Loading atlas");
     }
 

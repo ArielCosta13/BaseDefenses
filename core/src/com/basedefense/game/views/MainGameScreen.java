@@ -20,8 +20,6 @@ import com.basedefense.game.entity.systems.RenderingSystem;
 import com.basedefense.game.entity.systems.PlayerControlSystem;
 
 
-
-
 public class MainGameScreen implements Screen {
     private static final String TAG = MainGameScreen.class.getSimpleName();
     protected OrthographicCamera camera = null;

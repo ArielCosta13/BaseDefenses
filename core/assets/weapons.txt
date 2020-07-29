@@ -1,0 +1,19 @@
+weapons.png
+size: 76, 54
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cannon_turret_simple
+  rotate: false
+  xy: 0, 0
+  size: 32, 54
+  orig: 32, 54
+  offset: 0, 0
+  index: -1
+machinegun_medium_dual_dark
+  rotate: false
+  xy: 32, 0
+  size: 44, 46
+  orig: 44, 46
+  offset: 0, 0
+  index: -1

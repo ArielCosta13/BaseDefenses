@@ -31,7 +31,7 @@ public class EntityConfigurationFactory {
   }
 
   public void setPlayer(Entity player){
-    player.getComponent(TextureComponent.class).setTexture(manager.get(SHIP_BODY_BIG_ATLAS, TextureAtlas.class)
+    player.getComponent(TextureComponent.class).setTexture(manager.get(BASE_PARTS_ATLAS, TextureAtlas.class)
             .findRegion("body_03"));
   //  player.getComponent(TransformComponent.class).position.set(100 - player.getComponent(TextureComponent.class).center.x,
   //          100 - player.getComponent(TextureComponent.class).center.x,0);
@@ -43,7 +43,7 @@ public class EntityConfigurationFactory {
   }
 
     public void setPlayerPart(Entity playerPart){
-        playerPart.getComponent(TextureComponent.class).setTexture(manager.get(SHIP_PARTS_MEDIUM, TextureAtlas.class)
+        playerPart.getComponent(TextureComponent.class).setTexture(manager.get(BASE_PARTS_ATLAS, TextureAtlas.class)
                 .findRegion("weapon_base_medium_empty"));
         playerPart.getComponent(StateComponent.class).set(StateComponent.IDLE);
         setPlayerPartMovementStats(playerPart);
@@ -52,10 +52,10 @@ public class EntityConfigurationFactory {
 
     public void setHardPoint(Entity hardPoint, String size){
       if (size == "medium")
-        hardPoint.getComponent(TextureComponent.class).setTexture(manager.get(SHIP_PARTS_MEDIUM, TextureAtlas.class)
+        hardPoint.getComponent(TextureComponent.class).setTexture(manager.get(BASE_PARTS_ATLAS, TextureAtlas.class)
                 .findRegion("weapon_hardpoint_turret_medium_open"));
         if (size == "small")
-            hardPoint.getComponent(TextureComponent.class).setTexture(manager.get(SHIP_PARTS_MEDIUM, TextureAtlas.class)
+            hardPoint.getComponent(TextureComponent.class).setTexture(manager.get(BASE_PARTS_ATLAS, TextureAtlas.class)
                     .findRegion("weapon_hardpoint_turret_small_open"));
       hardPoint.getComponent(StateComponent.class).set(StateComponent.IDLE);
         setHardPointMovementStats(hardPoint);
@@ -64,10 +64,10 @@ public class EntityConfigurationFactory {
 
     public void setEmplacement(Entity emplacement, String size){
         if (size == "medium")
-            emplacement.getComponent(TextureComponent.class).setTexture(manager.get(EMPLACEMENT_MEDIUM, TextureAtlas.class)
+            emplacement.getComponent(TextureComponent.class).setTexture(manager.get(WEAPON_ATLAS, TextureAtlas.class)
                     .findRegion("emplacement_turret_cannon_medium_mk1"));
         if (size == "small")
-            emplacement.getComponent(TextureComponent.class).setTexture(manager.get(EMPLACEMENT_MEDIUM, TextureAtlas.class)
+            emplacement.getComponent(TextureComponent.class).setTexture(manager.get(WEAPON_ATLAS, TextureAtlas.class)
                     .findRegion("emplacement_turret_cannon_medium_mk1"));
         emplacement.getComponent(StateComponent.class).set(StateComponent.IDLE);
         setEmplacementMovementStats(emplacement);
@@ -75,7 +75,7 @@ public class EntityConfigurationFactory {
     }
 
     public void setWeaponPart(Entity weaponPart){
-        weaponPart.getComponent(TextureComponent.class).setTexture(manager.get(CANNON_MEDIUM_PARTS, TextureAtlas.class)
+        weaponPart.getComponent(TextureComponent.class).setTexture(manager.get(WEAPON_ATLAS, TextureAtlas.class)
                 .findRegion("cannon_ammo_chamber_01_mk1"));
        // weaponPart.getComponent(TextureComponent.class).region = manager.get(CANNON_MEDIUM, TextureAtlas.class)
        //            .findRegion("cannon_01_mk1");
@@ -105,7 +105,7 @@ public class EntityConfigurationFactory {
     }
 
     public void setTurret(Entity turret){
-        turret.getComponent(TextureComponent.class).region = manager.get(CANNON_TURRET_MEDIUM_ATLAS, TextureAtlas.class)
+        turret.getComponent(TextureComponent.class).region = manager.get(WEAPON_ATLAS, TextureAtlas.class)
                 .findRegion("turret_01_mk1");
         turret.getComponent(StateComponent.class).set(StateComponent.IDLE);
         setWeaponMovementStats(turret);
@@ -114,7 +114,7 @@ public class EntityConfigurationFactory {
 
     public void setMissileTurret(Entity turret){
         Animation<TextureRegion> shooting;
-        turret.getComponent(TextureComponent.class).region = manager.get(MISSILE_TURRET_SMALL_ATLAS, TextureAtlas.class)
+        turret.getComponent(TextureComponent.class).region = manager.get(WEAPON_ATLAS, TextureAtlas.class)
                 .findRegion("turret_03_mk1");
         turret.getComponent(StateComponent.class).set(StateComponent.SHOOTING);
         setWeaponMovementStats(turret);

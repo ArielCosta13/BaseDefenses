@@ -18,7 +18,7 @@ import com.basedefense.game.entity.components.WeaponPartComponent;
 import com.basedefense.game.entity.components.CollisionPolygonComponent;
 
 
-import static com.basedefense.game.loaders.Assets.BULLETS_ATLAS;
+//import static com.basedefense.game.loaders.Assets.BULLETS_ATLAS;
 
 public class EntityFactory {
 
@@ -198,7 +198,7 @@ public class EntityFactory {
         TransformComponent position = engine.createComponent(TransformComponent.class);
         TextureComponent texture = engine.createComponent(TextureComponent.class);
         StateComponent state = engine.createComponent(StateComponent.class);
-        texture.region = manager.get(BULLETS_ATLAS, TextureAtlas.class).findRegion("shell_small");
+      // texture.region = manager.get(BULLETS_ATLAS, TextureAtlas.class).findRegion("shell_small");
         BulletComponent bullet = engine.createComponent(BulletComponent.class);
       //  position.position.set(100,100,0);
         bullet.yVel = 5;
