@@ -3,7 +3,7 @@ package com.basedefense.game.loaders;
 public class Assets {
         // Textures Atlas
         //public static final String SHIP_ATLAS = "ships.atlas";
-        public static final String WEAPON_ATLAS  = "weapons.atlas";
+        public static final String WEAPON_ATLAS  = "weapons.txt";
         //  public static final String BULLETS_ATLAS  = "bullets.txt";
         public static final String BASE_PARTS_ATLAS = "baseparts.txt";
         public static final String HARD_POINTS_ATLAS_ = "weapons.txt";

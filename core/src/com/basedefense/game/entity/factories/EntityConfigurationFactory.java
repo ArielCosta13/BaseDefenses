@@ -32,7 +32,7 @@ public class EntityConfigurationFactory {
 
   public void setPlayer(Entity player){
     player.getComponent(TextureComponent.class).setTexture(manager.get(BASE_PARTS_ATLAS, TextureAtlas.class)
-            .findRegion("body_03"));
+            .findRegion("basepart_1x1_bottom"));
   //  player.getComponent(TransformComponent.class).position.set(100 - player.getComponent(TextureComponent.class).center.x,
   //          100 - player.getComponent(TextureComponent.class).center.x,0);
     player.getComponent(TransformComponent.class).position.set(0, 0 ,0);
@@ -44,7 +44,7 @@ public class EntityConfigurationFactory {
 
     public void setPlayerPart(Entity playerPart){
         playerPart.getComponent(TextureComponent.class).setTexture(manager.get(BASE_PARTS_ATLAS, TextureAtlas.class)
-                .findRegion("weapon_base_medium_empty"));
+                .findRegion("basepart_1x1_top"));
         playerPart.getComponent(StateComponent.class).set(StateComponent.IDLE);
         setPlayerPartMovementStats(playerPart);
         // weapon.getComponent(TransformComponent.class).isHidden = true;

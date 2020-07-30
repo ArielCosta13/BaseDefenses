@@ -59,9 +59,9 @@ public class MainGameScreen implements Screen {
         addSystems(sb);
         addEntities();
 
-        mapLoader = new TmxMapLoader();
-        map = mapLoader.load("maps/testBeachMap.tmx");
-        renderer = new OrthogonalTiledMapRenderer(map,1 /4f);
+       // mapLoader = new TmxMapLoader();
+       // map = mapLoader.load("maps/testBeachMap.tmx");
+       // renderer = new OrthogonalTiledMapRenderer(map,1 /4f);
     }
 
     @Override
@@ -74,8 +74,8 @@ public class MainGameScreen implements Screen {
         Gdx.gl.glClearColor(0f, 0f, 0f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         updateTestCamera(delta);
-        renderer.setView(camera);
-        renderer.render();
+        //renderer.setView(camera);
+        //renderer.render();
         engine.update(delta);
     }
 
@@ -131,14 +131,14 @@ public class MainGameScreen implements Screen {
         entityConfiguration.setPlayerPart(playerPart1);
         entityConfiguration.attachPlayerPart(player,playerPart1,0,0,-1);
 
-        Entity hardPoint1 = entityFactory.addEntity(EntityFactory.EntityType.HARDPOINT);
-        entityConfiguration.setHardPoint(hardPoint1, "medium");
-        entityConfiguration.attachHardPointToPart(playerPart1,hardPoint1,32,32,-2);
+       // Entity hardPoint1 = entityFactory.addEntity(EntityFactory.EntityType.HARDPOINT);
+       // entityConfiguration.setHardPoint(hardPoint1, "medium");
+       // entityConfiguration.attachHardPointToPart(playerPart1,hardPoint1,32,32,-2);
 
-        Entity emplacement1 = entityFactory.addEntity(EntityFactory.EntityType.EMPLACEMENT);
-        entityConfiguration.setEmplacement(emplacement1,"medium");
-        entityConfiguration.attachEmplacementToHardPoint(hardPoint1,emplacement1,0,0,-4);
-        engine.getSystem(PlayerControlSystem.class).playerRotationSignal.add(emplacement1.getComponent(TransformComponent.class));
+       // Entity emplacement1 = entityFactory.addEntity(EntityFactory.EntityType.EMPLACEMENT);
+       // entityConfiguration.setEmplacement(emplacement1,"medium");
+       // entityConfiguration.attachEmplacementToHardPoint(hardPoint1,emplacement1,0,0,-4);
+       // engine.getSystem(PlayerControlSystem.class).playerRotationSignal.add(emplacement1.getComponent(TransformComponent.class));
 
        // Entity weapon1 = entityFactory.addEntity(EntityFactory.EntityType.WEAPON);
        // entityConfiguration.setWeapon(weapon1);

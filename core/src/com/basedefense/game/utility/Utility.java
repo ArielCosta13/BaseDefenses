@@ -11,7 +11,7 @@ public class Utility {
 
     public static void queueAddImages(AssetManager manager){
         System.out.println("Loading atlas");
-      //  manager.load(SHIP_ATLAS, TextureAtlas.class);
+        manager.load(BASE_PARTS_ATLAS, TextureAtlas.class);
         manager.load(WEAPON_ATLAS, TextureAtlas.class);
       //  manager.load(BULLETS_ATLAS, TextureAtlas.class);
       //  manager.load(SHIP_BODY_BIG_ATLAS, TextureAtlas.class);
