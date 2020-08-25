@@ -10,15 +10,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.utils.Json;
 import com.basedefense.game.controller.KeyboardController;
 import com.basedefense.game.BaseDefense;
 import com.basedefense.game.entity.factories.EntityFactory;
 import com.basedefense.game.entity.factories.EntityConfigurationFactory;
 import com.basedefense.game.entity.components.TransformComponent;
+import com.basedefense.game.templates.EntityTemplate;
 import com.basedefense.game.viewports.Viewport;
 import com.basedefense.game.entity.systems.RenderingSystem;
 import com.basedefense.game.entity.systems.PlayerControlSystem;
-
 
 public class MainGameScreen implements Screen {
     private static final String TAG = MainGameScreen.class.getSimpleName();
@@ -124,14 +125,29 @@ public class MainGameScreen implements Screen {
     }
 
     private void addEntities(){
-        player = entityFactory.addEntity(EntityFactory.EntityType.PLAYER);
+        Json json = new Json();
+        EntityTemplate playertemplate = json.fromJson(EntityTemplate.class,
+                Gdx.files.internal("EntityTemplates/player.json"));
+
+        System.out.println(json.prettyPrint(playertemplate));
+        player = entityFactory.addEntity(playertemplate);
         entityConfiguration.setPlayer(player);
 
-        Entity playerPart1 = entityFactory.addEntity(EntityFactory.EntityType.PLAYER_PART);
+        //Json json2 = new Json();
+        EntityTemplate playerparttemplate = json.fromJson(EntityTemplate.class,
+                Gdx.files.internal("EntityTemplates/playerpart.json"));
+
+        System.out.println(json.prettyPrint(playerparttemplate));
+        Entity playerPart1 = entityFactory.addEntity(playerparttemplate);
         entityConfiguration.setPlayerPart(playerPart1);
         entityConfiguration.attachPlayerPart(player,playerPart1,0,0,-1);
 
-       // Entity hardPoint1 = entityFactory.addEntity(EntityFactory.EntityType.HARDPOINT);
+       // Entity playerPart2 = entityFactory.addEntity(PLAYER_PART);
+       // entityConfiguration.setPlayerPart(playerPart2);
+       // entityConfiguration.attachPlayerPart(player,playerPart2,5,5,-1);
+        
+
+        // Entity hardPoint1 = entityFactory.addEntity(EntityFactory.EntityType.HARDPOINT);
        // entityConfiguration.setHardPoint(hardPoint1, "medium");
        // entityConfiguration.attachHardPointToPart(playerPart1,hardPoint1,32,32,-2);
 

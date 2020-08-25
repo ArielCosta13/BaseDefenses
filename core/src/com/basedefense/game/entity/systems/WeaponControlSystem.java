@@ -37,16 +37,16 @@ public class WeaponControlSystem extends IteratingSystem  {
 
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
-        if (controller.isMouse1Down){
-            Entity shot = efac.addEntity(EntityFactory.EntityType.BULLET);
-            shot.getComponent(TransformComponent.class).position.x =  tcm.get(entity).position.x
-                    + wc.get(entity).offset.x;
-            shot.getComponent(TransformComponent.class).position.y =  tcm.get(entity).position.y
-                    + wc.get(entity).offset.y;
-            shot.getComponent(TransformComponent.class).position.z =  tcm.get(entity).position.z
-                    + wc.get(entity).offset.z;
-            shot.getComponent(TransformComponent.class).rotation =  entity.getComponent(TransformComponent.class).rotation;
-        }
+     //   if (controller.isMouse1Down){
+     //       Entity shot = efac.addEntity(BULLET);
+     //       shot.getComponent(TransformComponent.class).position.x =  tcm.get(entity).position.x
+     //               + wc.get(entity).offset.x;
+     //       shot.getComponent(TransformComponent.class).position.y =  tcm.get(entity).position.y
+     //               + wc.get(entity).offset.y;
+     //       shot.getComponent(TransformComponent.class).position.z =  tcm.get(entity).position.z
+     //               + wc.get(entity).offset.z;
+     //       shot.getComponent(TransformComponent.class).rotation =  entity.getComponent(TransformComponent.class).rotation;
+     //   }
 
 
 

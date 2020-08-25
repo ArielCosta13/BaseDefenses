@@ -1,0 +1,21 @@
+{
+  type: PLAYERPART
+  components: [
+    {
+      class: com.basedefense.game.entity.factories.EntityFactory$Components
+      value: PLAYERPART
+    }
+    {
+      class: com.basedefense.game.entity.factories.EntityFactory$Components
+      value: TRANSFORM
+    }
+    {
+      class: com.basedefense.game.entity.factories.EntityFactory$Components
+      value: MOVEMENTSTATS
+    }
+    {
+      class: com.basedefense.game.entity.factories.EntityFactory$Components
+      value: TEXTURE
+    }
+  ]
+}

@@ -2,8 +2,10 @@ package com.basedefense.game.entity.factories;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.utils.Json;
 import com.basedefense.game.entity.components.TextureComponent;
 import com.basedefense.game.entity.components.TransformComponent;
 import com.basedefense.game.entity.components.MovementStatsComponent;
@@ -16,6 +18,8 @@ import com.basedefense.game.entity.components.StateComponent;
 import com.basedefense.game.entity.components.BulletComponent;
 import com.basedefense.game.entity.components.WeaponPartComponent;
 import com.basedefense.game.entity.components.CollisionPolygonComponent;
+import com.basedefense.game.templates.EntityTemplate;
+
 
 
 //import static com.basedefense.game.loaders.Assets.BULLETS_ATLAS;
@@ -25,56 +29,19 @@ public class EntityFactory {
     private PooledEngine engine;
     private AssetManager manager;
 
-    public static enum EntityType{
+    public enum Components{
         PLAYER,
-        PLAYER_PART,
-        HARDPOINT,
-        EMPLACEMENT,
-        WEAPON,
-        WEAPON_PART,
-        TURRET,
-        BULLET
+        TRANSFORM,
+        MOVEMENTSTATS,
+        PLAYERPART,
+        TEXTURE,
+        STATE
+
     }
 
     public EntityFactory(PooledEngine engine, AssetManager manager){
         this.engine = engine;
         this.manager = manager;
-    }
-
-    /*
-       This method does not add the Entity to the engine
-     */
-    public Entity createEntity(EntityType type){
-        switch (type){
-            case PLAYER: return createPlayer();
-            case PLAYER_PART: return createPlayerPart();
-            case HARDPOINT: return createHardPoint();
-            case EMPLACEMENT: return createEmplacement();
-            case WEAPON: return createWeapon();
-            case WEAPON_PART: return createWeaponPart();
-            //case TURRET: return createTurret();
-            case BULLET: return createBullet();
-        }
-        return null;
-
-    }
-
-    /*
-      This method add the entity to the engine
-     */
-    public Entity addEntity(EntityType type){
-        switch (type){
-            case PLAYER: return addPlayer();
-            case PLAYER_PART: return addPlayerPart();
-            case HARDPOINT: return addHardPoint();
-            case EMPLACEMENT: return addEmplacement();
-            case WEAPON: return addWeapon();
-          //  case TURRET: return addTurret();
-            case BULLET: return addBullet();
-            case WEAPON_PART: return addWeaponPart();
-        }
-        return null;
-
     }
 
     private Entity createPlayer(){
@@ -209,57 +176,53 @@ public class EntityFactory {
         return entity;
     }
 
-    private Entity addPlayer(){
-        Entity player = createEntity(EntityType.PLAYER);
-        engine.addEntity(player);
-        return player;
-    }
-
-    private Entity addPlayerPart(){
-        Entity player_part = createEntity(EntityType.PLAYER_PART);
-        engine.addEntity(player_part);
-        return player_part;
-    }
-
-    private Entity addHardPoint(){
-        Entity hard_point = createEntity(EntityType.HARDPOINT);
-        engine.addEntity(hard_point);
-        return hard_point;
-    }
-
-    private Entity addEmplacement(){
-        Entity emplacement = createEntity(EntityType.EMPLACEMENT);
-        engine.addEntity(emplacement);
-        return emplacement;
-    }
-
-    private Entity addWeapon(){
-        Entity weapon = createEntity(EntityType.WEAPON);
-        engine.addEntity(weapon);
-        return weapon;
-    }
-
-    private Entity addWeaponPart(){
-        Entity weaponpart = createEntity(EntityType.WEAPON_PART);
-        engine.addEntity(weaponpart);
-        return weaponpart;
-    }
-
-    private Entity addBullet(){
-        Entity bullet = createEntity(EntityType.BULLET);
-        engine.addEntity(bullet);
-        return bullet;
-    }
-
-
-    private Entity addTurret(){
-        Entity turret = createEntity(EntityType.WEAPON);
-        engine.addEntity(turret);
-        return turret;
-    }
-
     public void removeEntity(Entity entity){
         engine.removeEntity(entity);
     }
 
+    public Entity addEntity(EntityTemplate template){
+
+        Entity entity = engine.createEntity();
+        for (Components component : template.getComponents()){
+          switch(component) {
+              case PLAYER:
+                    System.out.println("Added component Player");
+                    PlayerComponent playerc = engine.createComponent(PlayerComponent.class);
+                    entity.add(playerc);
+                    break;
+              case TRANSFORM:
+                    System.out.println("Added component Transform");
+                    TransformComponent positionc = engine.createComponent(TransformComponent.class);
+                    entity.add(positionc);
+                    break;
+              case MOVEMENTSTATS:
+                    System.out.println("Added component Movement");
+                    MovementStatsComponent movementc = engine.createComponent(MovementStatsComponent.class);
+                    entity.add(movementc);
+                    break;
+              case PLAYERPART:
+                    System.out.println("Added component Player Part");
+                    PlayerPartComponent part = engine.createComponent(PlayerPartComponent.class);
+                    entity.add(part);
+                    break;
+              case TEXTURE:
+                    System.out.println("Added component Texture");
+                    TextureComponent texture = engine.createComponent(TextureComponent.class);
+                    entity.add(texture);
+                    break;
+              case STATE:
+                    System.out.println("Added component STATE");
+                    StateComponent state = engine.createComponent(StateComponent.class);
+                    entity.add(state);
+                    break;
+          }
+
+        }
+
+        CollisionPolygonComponent cpolygon = engine.createComponent(CollisionPolygonComponent.class);
+        entity.add(cpolygon);
+
+        engine.addEntity(entity);
+        return entity;
+    }
 }

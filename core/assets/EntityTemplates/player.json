@@ -1,0 +1,17 @@
+{
+type: PLAYER
+components: [
+	{
+		class: com.basedefense.game.entity.factories.EntityFactory$Components
+		value: PLAYER
+	}
+	{
+		class: com.basedefense.game.entity.factories.EntityFactory$Components
+		value: TRANSFORM
+	}
+	{
+		class: com.basedefense.game.entity.factories.EntityFactory$Components
+		value: MOVEMENTSTATS
+	}
+]
+}
