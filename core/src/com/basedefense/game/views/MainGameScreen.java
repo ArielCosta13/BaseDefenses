@@ -17,6 +17,7 @@ import com.basedefense.game.entity.factories.EntityFactory;
 import com.basedefense.game.entity.factories.EntityConfigurationFactory;
 import com.basedefense.game.entity.components.TransformComponent;
 import com.basedefense.game.templates.EntityTemplate;
+import com.basedefense.game.templates.PlayerPartConfigurationTemplate;
 import com.basedefense.game.viewports.Viewport;
 import com.basedefense.game.entity.systems.RenderingSystem;
 import com.basedefense.game.entity.systems.PlayerControlSystem;
@@ -139,7 +140,14 @@ public class MainGameScreen implements Screen {
 
         System.out.println(json.prettyPrint(playerparttemplate));
         Entity playerPart1 = entityFactory.addEntity(playerparttemplate);
-        entityConfiguration.setPlayerPart(playerPart1);
+
+        PlayerPartConfigurationTemplate playerpartconfiguracion = json.fromJson(PlayerPartConfigurationTemplate.class,
+                Gdx.files.internal("EntityConfiguration/simplebasepart.json"));
+        System.out.println(json.prettyPrint(playerpartconfiguracion));
+
+
+
+        entityConfiguration.setPlayerPart(playerPart1, playerpartconfiguracion);
         entityConfiguration.attachPlayerPart(player,playerPart1,0,0,-1);
 
        // Entity playerPart2 = entityFactory.addEntity(PLAYER_PART);

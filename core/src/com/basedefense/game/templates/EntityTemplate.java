@@ -7,11 +7,6 @@ import java.util.ArrayList;
 public class EntityTemplate {
 
     private String type;
-   // private boolean PlayerComponent;
-   // private boolean TextureComponent;
-   // private boolean TransformComponent;
-   // private boolean MovementStatsComponent;
-   // private boolean CollisionPolygonComponent;
     ArrayList components = new ArrayList<EntityFactory.Components>();
 
     public void setType(String type){ this.type = type;}

@@ -13,6 +13,7 @@ public class Utility {
         System.out.println("Loading atlas");
         manager.load(BASE_PARTS_ATLAS, TextureAtlas.class);
         manager.load(WEAPON_ATLAS, TextureAtlas.class);
+      //  manager.load("TT",TextureAtlas.class);
       //  manager.load(BULLETS_ATLAS, TextureAtlas.class);
       //  manager.load(SHIP_BODY_BIG_ATLAS, TextureAtlas.class);
       //  manager.load(CANNON_TURRET_MEDIUM_ATLAS, TextureAtlas.class);

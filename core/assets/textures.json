@@ -1,0 +1,19 @@
+{
+  "assets": [
+    {
+      "type": "ATLAS",
+      "name": "WEAPON_ATLAS",
+      "path": "weapons.txt"
+    },
+    {
+      "type": "ATLAS",
+      "name": "BASE_PARTS_ATLAS",
+      "path": "baseparts.txt"
+    },
+    {
+      "type": "ATLAS",
+      "name": "BULLETS_ATLAS",
+      "value": "bullets.txt"
+    }
+  ]
+}

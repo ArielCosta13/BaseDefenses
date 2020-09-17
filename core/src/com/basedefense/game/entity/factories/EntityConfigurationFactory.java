@@ -20,6 +20,7 @@ import com.basedefense.game.entity.components.AttachmentPointComponent;
 import com.basedefense.game.entity.components.ConnectorPoint;
 
 import com.basedefense.game.entity.components.WeaponPartComponent;
+import com.basedefense.game.templates.PlayerPartConfigurationTemplate;
 
 import static com.basedefense.game.loaders.Assets.*;
 
@@ -42,9 +43,9 @@ public class EntityConfigurationFactory {
    // player.getComponent(TransformComponent.class).isHidden = true;
   }
 
-    public void setPlayerPart(Entity playerPart){
+    public void setPlayerPart(Entity playerPart, PlayerPartConfigurationTemplate ppconfig ){
         playerPart.getComponent(TextureComponent.class).setTexture(manager.get(BASE_PARTS_ATLAS, TextureAtlas.class)
-                .findRegion("basepart_1x1_top"));
+                .findRegion(ppconfig.getTexture()));
       //  playerPart.getComponent(StateComponent.class).set(StateComponent.IDLE);
         setPlayerPartMovementStats(playerPart);
         // weapon.getComponent(TransformComponent.class).isHidden = true;

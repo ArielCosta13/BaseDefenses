@@ -1,5 +1,7 @@
 package com.basedefense.game.loaders;
 
+import java.util.HashMap;
+
 public class Assets {
         // Textures Atlas
         //public static final String SHIP_ATLAS = "ships.atlas";
@@ -15,7 +17,15 @@ public class Assets {
         //public static final String CANNON_MEDIUM = "weapons/weapon_cannon_medium.atlas";
         //public static final String CANNON_MEDIUM_ANIMATED = "weapons/weapon_cannon_medium_animated.atlas";
         //public static final String CANNON_MEDIUM_PARTS = "weapons/weapon_cannon_medium_parts.atlas";
-    }
+
+        HashMap<String, String> textures = new HashMap<String, String>();
+        HashMap<String, String> templates = new HashMap<String, String>();
+
+      public Assets(){
+
+
+      }
+}
 
 
 
