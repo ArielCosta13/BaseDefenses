@@ -1,6 +1,8 @@
 package com.basedefense.game.utility;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
@@ -71,5 +73,19 @@ public class Utility {
         return vector;
 
     }
+
+    public static Texture combineTextures(Texture texture1, Texture texture2) {
+        texture1.getTextureData().prepare();
+        Pixmap pixmap1 = texture1.getTextureData().consumePixmap();
+        texture2.getTextureData().prepare();
+        Pixmap pixmap2 = texture2.getTextureData().consumePixmap();
+        pixmap1.drawPixmap(pixmap2, 0, 0);
+        Texture textureResult = new Texture(pixmap1);
+        pixmap1.dispose();
+        pixmap2.dispose();
+        return textureResult;
+    }
+
+
 
 }
